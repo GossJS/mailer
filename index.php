@@ -8,6 +8,7 @@ require 'vendor/autoload.php';
 $mail = new PHPMailer(true);                              // `true` разрешает исключения
 try {
     // настройки сервера
+    $mail->CharSet = 'UTF-8';                             // кодировка, важно 
     $mail->SMTPDebug = 2;                                 // подробный отчёт о действиях
     $mail->isSMTP();                                      // использование SMTP
     $mail->Host = 'smtp.yandex.ru';
@@ -25,9 +26,9 @@ try {
 
     // Содержимое
     $mail->isHTML(true);                                  // формат письма – HTML
-    $mail->Subject = 'Тема письма;
+    $mail->Subject = 'Тема письма';
     $mail->Body    = 'Тело сообщения с <b>полужирным</b> шрифтом!';
-    $mail->AltBody = 'Тело без тегов для не-HTML клиентов;
+    $mail->AltBody = 'Тело без тегов для не-HTML клиентов';
 
     $mail->send();
     echo 'Отправлено!';
