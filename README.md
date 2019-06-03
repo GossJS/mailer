@@ -7,3 +7,8 @@
  ```bash
  composer require phpmailer/phpmailer
  ```
+
+Обратите внимание на 
+```php
+$mail->CharSet = 'UTF-8';
+```
